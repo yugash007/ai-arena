@@ -1,0 +1,7 @@
+{
+  "name": "Copy of AI Arena",
+  "description": "AI Arena: Your personal study companion. Upload documents to generate cheat sheets, flash cards, and more.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
