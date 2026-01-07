@@ -1,165 +1,278 @@
 
-# AI Arena | Intelligence Engine
+# AI Arena
 
-> **✨ NEW:** Free-Tier Optimizations Implemented!
-> - 📦 **Smart Caching**: Reduce API calls by 30-40% through intelligent document caching
-> - 🔄 **Batch Processing**: Queue multiple documents while respecting 15 RPM rate limits
-> - 📱 **Offline Mode**: Study flashcards without internet, auto-sync when online
-> 
-> See [FREE_TIER_OPTIMIZATIONS.md](FREE_TIER_OPTIMIZATIONS.md) for details.
+**AI Arena** is an intelligent study companion powered by Google Gemini AI that transforms documents, lectures, and study materials into structured, actionable learning tools. Built for students and professionals in engineering, computer science, medicine, and beyond.
 
-**AI Arena** is the definitive, "GOAT Level" study companion engineered for high-performance students and professionals in **Engineering, Computer Science, and Medicine**.
-
-It leverages the cutting-edge **Google Gemini API (Gemini 3 / 2.5)** to transform raw chaos—text documents, complex PDFs, and even **audio/video lecture recordings**—into structured, actionable intelligence.
-
-![AI Arena Interface](https://via.placeholder.com/1200x600/030712/38bdf8?text=AI+Arena+Pro+Interface)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://ai-study-arena.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## 🚀 Neural Capabilities
+## Features
 
-### 1. 🧠 The Nexus (Knowledge Topology)
-*   **Global Knowledge Graph:** Visualizes connections between all your saved documents using interactive **Mermaid.js** graphs.
-*   **Smart Study Path:** Generates a linear, gamified vertical timeline of concepts to master, marked by status (Pending, In-Progress, Mastered).
-*   **AI Insights:** Provides high-level analysis of gaps in your knowledge library.
+### 📚 Document Analysis & Cheat Sheets
+- Upload PDFs, DOCX, TXT, images, audio, or video files
+- Generate structured cheat sheets with color-coded sections
+- LaTeX support for mathematical equations
+- Auto-generated Mermaid.js diagrams for complex processes
+- Multiple output styles: Concise, Standard, Detailed, Formula-heavy, Definition-heavy
 
-### 2. 🤖 Persistent Study Buddy
-*   **Context-Aware Sidecar:** A chat interface that "lives" alongside your documents. It knows exactly what you are looking at.
-*   **Memory Persistence:** Remembers your conversation history across sessions (stored locally).
-*   **Socratic Mode:** Can be toggled to guide you to answers rather than solving them for you.
+### 🃏 Smart Flashcards with Spaced Repetition
+- Auto-generate flashcards from documents or cheat sheets
+- Built-in Spaced Repetition System (SRS) algorithm
+- Rating system: Again, Hard, Good, Easy
+- Offline mode with automatic sync when online
+- Progress tracking and performance analytics
 
-### 3. 🎙️ Multimodal Lecture Intelligence
-*   **Audio/Video Processing:** Upload **MP3, WAV, MP4, or MPEG** files.
-*   **Structure Extraction:** Automatically generates:
-    *   Timeline of Key Events.
-    *   Core Concept Definitions.
-    *   Actionable Homework/To-Dos.
+### 🎯 AI-Powered Quiz Generation
+- Generate customized quizzes from your materials
+- Adaptive difficulty with plausible distractors
+- Detailed explanations for correct answers
+- Weakness analysis to identify knowledge gaps
 
-### 4. ⚡ Analytical Workbench (Cheat Sheets)
-*   **Logic Matrix:** Converts unstructured text into structured, color-coded sections.
-*   **Visual Intelligence:** Automatically detects processes and generates flowcharts/diagrams (Mermaid.js) on the fly.
-*   **Voice Mode:** Neural Text-to-Speech for auditory review.
-*   **Smart Highlight:** AI-driven highlighting of the top 20% most critical information.
+### 🤖 Study Buddy Chat
+- Context-aware AI assistant that understands your documents
+- Persistent conversation history
+- Socratic mode for guided learning
+- Google Search integration for external knowledge
 
-### 5. 🃏 Neural Flash (Active Recall)
-*   **SRS Algorithm:** Built-in Spaced Repetition System (Again, Hard, Good, Easy) to optimize memory retention.
-*   **Auto-Generation:** Creates cards from documents or specific cheat sheets.
+### 📊 Advanced Study Tools
+- **Exam Heatmap**: Analyze past exams to identify recurring topics
+- **Concept Maps**: Visualize relationships between ideas
+- **Revision Planner**: Auto-generate study schedules based on available time
+- **Exam Strategy**: Get tactical plans for approaching specific exams
+- **Code Debugger**: Fix and explain code errors across multiple languages
 
-### 6. 🩺 Diagnostic Engine & Code Debugger
-*   **Quiz Mode:** Generates difficult multiple-choice questions with detailed "Why you were wrong" explanations.
-*   **Weakness Detector:** Analyzes quiz performance to diagnose specific knowledge gaps.
-*   **Code Diff Viewer:** A visual "Original vs. Fixed" diff tool for JavaScript, Python, and HTML/CSS debugging.
+### 🧠 The Nexus (Knowledge Graph)
+- Visualize connections across all your saved documents
+- Smart study path recommendations
+- Gap analysis and learning insights
+- Track progress through concepts (Pending → In Progress → Mastered)
 
-### 7. 🎯 Prediction Engine
-*   **Exam Heatmaps:** Analyzes multiple past exam papers to generate a frequency heatmap of topics.
-*   **Strategy Profiles:** Outputs a tactical plan: *Time Allocation*, *Order of Attack*, and *Pitfall Avoidance*.
+### 🎙️ Multimodal Learning
+- Process audio/video lecture recordings (MP3, WAV, MP4, MPEG)
+- Extract timelines, key concepts, and action items
+- Text-to-speech for auditory review
+
+### ⚡ Free-Tier Optimizations
+- **Smart Caching**: 30-40% reduction in API calls through intelligent document hashing
+- **Batch Processing**: Queue unlimited documents while respecting rate limits
+- **Multi-Key Rotation**: Fast failover across 4 API keys to bypass 15 RPM limits
+- **Offline Mode**: Full flashcard functionality without internet
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-*   **Core:** React 19, TypeScript, Vite
-*   **AI Model:** Google GenAI SDK (`@google/genai`) - **Gemini 3 Flash Preview** & **Gemini 2.5**
-*   **Backend:** Firebase v12 (Auth, Realtime Database)
-*   **Visualization:** 
-    *   `mermaid` (Graphs & Charts)
-    *   `katex` (Advanced Math/LaTeX)
-    *   `framer-motion` (Cinematic Animations)
-    *   `tsparticles` (Meteor Backgrounds)
-*   **Parsing:** `pdfjs-dist`, `mammoth` (DOCX)
+**Frontend**
+- React 19 with TypeScript
+- Vite for build tooling
+- Tailwind CSS for styling
+- Framer Motion for animations
+
+**AI & Processing**
+- Google Gemini API (gemini-3-flash-preview)
+- PDF.js for PDF parsing
+- Mammoth for DOCX extraction
+
+**Backend & Storage**
+- Firebase Authentication
+- Firebase Realtime Database
+- LocalStorage for offline data
+
+**Visualization**
+- Mermaid.js for diagrams
+- KaTeX for mathematical notation
+- Custom Markdown parser with syntax highlighting
 
 ---
 
-## ⚙️ Setup & Installation
+## Getting Started
 
-### 1. Prerequisites
-*   Node.js (v18+)
-*   A Google Cloud Project with the **Gemini API** enabled.
-*   A Firebase Project (for Cloud Sync).
+### Prerequisites
+- Node.js 18 or higher
+- Google Gemini API key ([Get one here](https://aistudio.google.com/app/apikey))
+- Firebase project credentials (optional, for cloud sync)
 
-### 2. Installation
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yugash007/ai-arena.git
+   cd ai-arena
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables**
+   
+   Create a `.env.local` file in the root directory:
+   ```env
+   VITE_API_KEY=your_gemini_api_key_1,your_gemini_api_key_2,your_gemini_api_key_3,your_gemini_api_key_4
+   ```
+   
+   > **Note**: For optimal performance, use 4 comma-separated API keys to enable rotation and bypass rate limits.
+
+4. **Update Firebase configuration** (optional)
+   
+   Edit `src/firebase.ts` with your Firebase project credentials if you want cloud sync functionality.
+
+5. **Start development server**
+   ```bash
+   npm run dev
+   ```
+   
+   The app will be available at `http://localhost:5173`
+
+### Building for Production
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/ai-arena.git
-
-# Install dependencies
-npm install
+npm run build
 ```
 
-### 3. Environment Configuration
-
-Create a `.env` file in the root directory:
-
-```env
-# Required for AI generation
-API_KEY=your_google_gemini_api_key
-```
-
-*Note: Firebase configuration is located in `src/firebase.ts`. Replace the config object with your own Firebase credentials.*
-
-### 4. Running the App
-
-```bash
-# Start development server
-npm run dev
-```
-
-The app will launch at `http://localhost:5173`.
+The build output will be in the `dist/` directory.
 
 ---
 
-## 📖 Usage Protocols
+## Deployment
 
-1.  **Inject Data:** Drag & Drop a PDF, DOCX, Image, or **Video/Audio** file into the "Input Module".
-2.  **Select Protocol:**
-    *   **Analysis:** Generates the main Logic Sheet.
-    *   **Lecture:** Extracts notes from media.
-    *   **Strategy:** Predicts exam topics.
-3.  **Engage:**
-    *   Click **Nexus** to see how this doc connects to your library.
-    *   Open **Buddy** to chat with the document.
-4.  **Sync:** Log in via Google to persist your "Knowledge Vault" to the cloud.
+### Deploy to Vercel
 
----
+This project is optimized for Vercel deployment:
 
-## 🔐 Resilience & Security
+1. **Install Vercel CLI** (if not already installed)
+   ```bash
+   npm install -g vercel
+   ```
 
-*   **Error Handling:** Implements exponential backoff retry logic for API calls.
-*   **Sanitization:** Robust JSON parsing and Markdown cleaning to prevent rendering crashes.
-*   **Persistence:** Hybrid storage (Local + Cloud) ensures data isn't lost on refresh.
+2. **Deploy**
+   ```bash
+   vercel
+   ```
 
----
+3. **Set environment variables**
+   
+   Add `VITE_API_KEY` to your Vercel project settings:
+   - Go to Project Settings → Environment Variables
+   - Add `VITE_API_KEY` with your comma-separated Gemini API keys
+   - Set for Production, Preview, and Development environments
 
-## 📚 Documentation
+4. **Deploy to production**
+   ```bash
+   vercel --prod
+   ```
 
-### Free-Tier Optimization Features
-- **[FREE_TIER_OPTIMIZATIONS.md](FREE_TIER_OPTIMIZATIONS.md)** - Complete feature documentation
-- **[TESTING_GUIDE.md](TESTING_GUIDE.md)** - How to test the new features
-- **[ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md)** - Technical architecture & design patterns
-- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick facts and code reference
-
-### Implementation Details
-- **[DELIVERY_SUMMARY.md](DELIVERY_SUMMARY.md)** - What was delivered and why
-- **[IMPLEMENTATION_CHECKLIST.md](IMPLEMENTATION_CHECKLIST.md)** - Deployment readiness status
+The included `vercel.json` configuration handles SPA routing automatically.
 
 ---
 
-## 📌 Quick Start: New Features
+## Usage
 
-### Smart Caching (30-40% API Savings)
-Upload a PDF twice → CacheDialog appears → Choose cached or fresh result
+### Quick Start Guide
 
-### Batch Processing (Process Unlimited Documents)
-Select multiple files → Queue processes sequentially → Respects 15 RPM limit
+1. **Upload a document**: Drag and drop a PDF, DOCX, or other supported file
+2. **Choose output style**: Select how you want the information structured
+3. **Generate**: Click "Generate Cheat Sheet" and wait for AI processing
+4. **Save**: Save to your Knowledge Vault for future reference
+5. **Study**: Use flashcards, quizzes, or chat with the AI about your content
 
-### Offline Mode (Study Without Internet)
-Go offline → Study flashcards → Changes saved locally → Auto-sync when online
+### Using Smart Caching
 
-**Try them now!** See [TESTING_GUIDE.md](TESTING_GUIDE.md) for instructions.
+When you upload the same document twice:
+- A dialog appears showing the cached version
+- Choose to use the cached result (instant) or regenerate (uses API quota)
+- Cached results are stored for 7 days
+
+### Batch Processing
+
+Upload multiple files:
+- They're automatically queued
+- Processed sequentially with 4-second intervals
+- Respects the 15 requests/minute free-tier limit
+- Track progress in the Batch Processing modal
+
+### Offline Mode
+
+Study flashcards without internet:
+- Changes are saved locally
+- Blue badge shows pending sync count
+- Click sync button when online to push changes to cloud
 
 ---
 
-## 📄 License
+## Architecture
 
-Distributed under the MIT License.
+### Key Components
+
+- **`services/geminiService.ts`**: Core AI integration with retry logic and multi-key rotation
+- **`utils/cacheManager.ts`**: Document hashing and cache management
+- **`utils/batchQueueManager.ts`**: Rate-limited queue processing
+- **`utils/offlineFlashcardManager.ts`**: Offline change tracking and sync
+- **`contexts/AuthContext.tsx`**: Firebase authentication state
+- **`contexts/ToastContext.tsx`**: Global notification system
+
+### Data Flow
+
+1. Document upload → Hash generation → Cache check
+2. If not cached: Send to Gemini API with retry logic
+3. Parse and validate JSON response
+4. Save to local storage + Firebase (if authenticated)
+5. Render with syntax highlighting and diagram rendering
+
+---
+
+## Performance Optimizations
+
+### API Efficiency
+- Multi-key rotation distributes requests across 4 API keys
+- Fast failover switches keys in 500ms on rate limit errors
+- Exponential backoff retry with smart error handling
+- Document hashing prevents duplicate processing
+
+### Caching Strategy
+- SHA-256 hashing based on filename + size + first 1KB
+- 7-day cache expiration with automatic cleanup
+- Size monitoring prevents localStorage overflow
+
+### Rate Limiting
+- 4-second intervals between batched requests
+- Respects 15 RPM free-tier quota
+- Queue persistence across page refreshes
+
+---
+
+## Contributing
+
+Contributions are welcome! Please follow these guidelines:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+- Built with [Google Gemini API](https://ai.google.dev/)
+- Powered by [React](https://react.dev/) and [Vite](https://vitejs.dev/)
+- Deployed on [Vercel](https://vercel.com/)
+- Icons from [Lucide](https://lucide.dev/)
+
+---
+
+## Support
+
+For issues, questions, or feature requests, please [open an issue](https://github.com/yugash007/ai-arena/issues) on GitHub.
+
+**Live Demo**: [https://ai-study-arena.vercel.app](https://ai-study-arena.vercel.app)
