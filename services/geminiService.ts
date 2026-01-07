@@ -9,13 +9,13 @@ declare const mammoth: any;
 
 /**
  * HACKATHON STRATEGY: Key Rotation
- * Parses the API_KEY env var. If it contains commas, it treats it as a pool of keys
+ * Parses the VITE_API_KEY env var. If it contains commas, it treats it as a pool of keys
  * and picks one at random. This helps bypass the 15 RPM limit on the free tier.
  */
 const getAIClient = () => {
-  const envKey = process.env.API_KEY;
+  const envKey = import.meta.env.VITE_API_KEY;
   if (!envKey) {
-    throw new Error("API_KEY environment variable not set.");
+    throw new Error("VITE_API_KEY environment variable not set.");
   }
 
   // Split by comma to support multiple keys (e.g. "key1,key2,key3")
@@ -69,7 +69,7 @@ async function retryOperation<T>(operation: () => Promise<T>, retries = 3, delay
     // HACKATHON STRATEGY: Fast Failover
     // If we have multiple keys and hit a rate limit, don't wait 4 seconds.
     // Retry almost immediately (500ms) to jump to the next key in the pool.
-    const keys = (process.env.API_KEY || '').split(',');
+    const keys = (import.meta.env.VITE_API_KEY || '').split(',');
     const hasMultipleKeys = keys.length > 1;
 
     if (isRateLimit) {
